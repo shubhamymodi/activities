@@ -97,9 +97,9 @@ html +=
     amount.value = ' ';
     console.log(details);
 })
-function generatePDF(){
+// function generatePDF(){
     
-    const element = document.getElementById('invoice');
-    html2pdf().from(element).save();
-    console.log('clicked');
-}
+//     const element = document.getElementById('invoice');
+//     html2pdf().from(element).save();
+//     console.log('clicked');
+// }
