@@ -1,0 +1,56 @@
+body{
+    width: 60%;
+    font-family: 'Raleway', sans-serif;
+    color: #222;
+    margin:auto;
+    border: 1px solid #333;  
+    
+}
+p{
+    margin: 0;
+}
+hr{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+ul{
+    margin-top:0;
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
+.header{
+    text-align: center;
+}
+.name{
+    font-weight: 300;
+    font-size: 3.5em;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+.heading{
+    color: #444;
+    font-size: 23px;
+    font-weight: 200;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+.subheading{
+    color: #333;
+    font-weight: 600;
+}
+.description{
+    color: #333;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.25;
+
+}
+.education-section{
+    margin-bottom: 10px;
+}
+.links{
+    font-weight: 300;
+    font-size: 15px;
+}
