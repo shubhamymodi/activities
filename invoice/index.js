@@ -12,15 +12,54 @@ let totalDue = document.querySelector('.totalDue');
 let currency = document.getElementById('currency');
 let totalAmt = document.querySelector('.totalAmt');
 let curr = document.querySelector('.curr');
+let invoice = document.getElementById('invoice');
+
+
 let subTotal = 0;
 let tax = 0;
+
+
+const currencyRate = {
+    'INR': {
+        'USD': 0.013408214,
+        'EUR': 0.011808502,
+        'AED': 0.049244522,
+    },
+    'USD':{
+        'INR': 74.585299,
+        'EUR': 0.88083805,
+        'AED': 3.6725,
+    },
+    'EUR':{
+        'INR': 84.671123,
+        'USD': 1.1351855,
+        'AED': 4.1689688,
+    },
+    'AED':{
+        'INR': 20.311863,
+        'EUR': 0.23990733,
+        'USD': 0.27229408,
+    },
+};
+// let oldCurrency = currency.value;
+// currency.addEventListener('change',()=>{
+//     let newCurrency = currency.value; 
+//     let multiplier = currencyRate[oldCurrency][newCurrency];    
+    
+//     window.mult = multiplier;
+//     oldCurrency = newCurrency;
+//     subTotal = subTotal*window.mult;
+
+    
+      
+// })
 rate.addEventListener('change', ()=>{
     amount.value = (rate.value)*(quantity.value);
     amount.innerHTML = amount.value;
 })
 vat.addEventListener('change', ()=>{
     vat = parseInt(vat.value,10);
-    tax=parseInt(subTotal*(vat/100),10);
+    tax=parseInt(subTotal*(vat/100),10);   
     finalTax.innerHTML = tax; 
     totalDue.innerHTML = subTotal+tax;
     curr.innerHTML = currency.value;
@@ -61,6 +100,8 @@ html +=
 })
 
 document.getElementById('newRowButton').addEventListener('click', ()=>{
+    // console.log(window.mult);
+    // if(window.mult===undefined) window.mult=1;    
     let temp=[];
     temp.push(name1.value);
     temp.push(quantity.value);
@@ -95,11 +136,28 @@ html +=
     quantity.value = ' ';
     rate.value = ' ';
     amount.value = ' ';
-    console.log(details);
+    // console.log(details);
 })
-// function generatePDF(){
-    
-//     const element = document.getElementById('invoice');
-//     html2pdf().from(element).save();
-//     console.log('clicked');
-// }
+
+// window.jsPDF = window.jspdf.jsPDF;
+//         var doc = new jsPDF();
+        
+//         var elementHandler = {
+//         '#editor': function (element, renderer) {
+//             return true;
+//         }
+//         };
+//         document.getElementById('download').addEventListener('click',()=>{
+            
+            
+//             doc.fromHTML(invoice,15,15,
+//                 {
+//                 'width': 180,'elementHandlers': elementHandler
+//                 });     
+//             doc.save('invoice.pdf');
+
+//         });
+       
+       
+
+
